@@ -6,7 +6,10 @@ import { Participant } from '../../components/Participant';
 export const Home = () => {
   const handleParticipantAdd = () => {
     console.log('Adicionar Participante');
+  }
 
+  const handleParticipantRemove = (name: string) => {
+    console.log(`Remover participante: ${name}`);
   }
 
   return (
@@ -27,7 +30,9 @@ export const Home = () => {
         </TouchableOpacity>
       </View>
 
-      <Participant />
+      <Participant name="Felipe Soller" onRemove={() => handleParticipantRemove('Felipe Soller')} />
+      <Participant name="Guilherme Feitosa" onRemove={() => handleParticipantRemove('Guilherme Feitosa')} />
+      <Participant name="Rodolffo Farias" onRemove={() => handleParticipantRemove('Rodolffo Farias')} />
     </View>
   );
 }
